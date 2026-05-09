@@ -19,9 +19,6 @@
   --text-sub:     #D4C4A0;
   --text-muted:   #9A8E7A;
   --brand:        #E8743C;
-  --brand-light:  #B8520A;
-  --cream:        #F5E8D0;
-  --navy:         #1E2A44;
   --bg-card:      rgba(245, 232, 208, 0.045);
   --bg-card-hover: rgba(245, 232, 208, 0.075);
 
@@ -41,8 +38,8 @@
   --comic-shadow: 6px 6px 0 #000;
   --comic-shadow-sm: 3px 3px 0 #000;
 
-  --font-display: 'Audiowide', cursive;
-  --font-comic:   'Bowlby One', 'Audiowide', cursive;
-  --font-serif:   'Crimson Pro', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'Audiowide', system-ui, sans-serif;
+  --font-comic:   var(--font-bowlby), 'Bowlby One', cursive;
+  --font-serif:   var(--font-crimson), 'Crimson Pro', Georgia, serif;
+  --font-body:    var(--font-inter), Inter, system-ui, sans-serif;
 }
