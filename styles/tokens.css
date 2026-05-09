@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Audiowide';
+  src: url('/fonts/Audiowide-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Traviss tokens */
+  --bg:           #0D1420;
+  --bg-deep:      #080d17;
+  --surface:      #1E2A44;
+  --surface-2:    #243352;
+  --nav-bg:       rgba(20,29,46,0.85);
+  --border:       #2E3D5E;
+  --border-strong: rgba(245, 232, 208, 0.18);
+  --text:         #F5E8D0;
+  --text-sub:     #D4C4A0;
+  --text-muted:   #9A8E7A;
+  --brand:        #E8743C;
+  --brand-light:  #B8520A;
+  --cream:        #F5E8D0;
+  --navy:         #1E2A44;
+  --bg-card:      rgba(245, 232, 208, 0.045);
+  --bg-card-hover: rgba(245, 232, 208, 0.075);
+
+  /* Publisher accents */
+  --p-marvel:    #E8243C;
+  --p-dc:        #4DA3FF;
+  --p-image:     #22c55e;
+  --p-darkhorse: #fb923c;
+  --p-idw:       #a78bfa;
+  --p-indie:     #22d3ee;
+
+  --radius:       12px;
+  --radius-sm:    8px;
+  --radius-pill:  999px;
+  --shadow:       0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg:    0 18px 45px rgba(0, 0, 0, 0.5);
+  --comic-shadow: 6px 6px 0 #000;
+  --comic-shadow-sm: 3px 3px 0 #000;
+
+  --font-display: 'Audiowide', cursive;
+  --font-comic:   'Bowlby One', 'Audiowide', cursive;
+  --font-serif:   'Crimson Pro', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
