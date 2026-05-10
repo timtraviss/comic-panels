@@ -41,3 +41,6 @@ supabase.md
 next-env.d.ts
 
 /app/generated/prisma
+
+# cover images — large binary files, served from public/ at runtime
+/public/covers/
