@@ -1,0 +1,10 @@
+.input {
+  width: 280px; padding: 8px 16px; border-radius: var(--radius-pill);
+  background: rgba(245,232,208,0.06); border: 1px solid var(--border);
+  color: var(--text); font-size: 14px; font-family: inherit;
+  outline: none; transition: width 0.2s ease, border-color 0.2s ease;
+  appearance: none;
+}
+.input:focus { width: 340px; border-color: var(--brand); }
+.input::placeholder { color: var(--text-muted); }
+@media (prefers-reduced-motion: reduce) { .input { transition: none; } }

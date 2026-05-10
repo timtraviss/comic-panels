@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Crimson_Pro, Bowlby_One } from 'next/font/google'
 import '@/styles/globals.css'
+import Nav from '@/app/_components/Nav/Nav'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,7 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.variable} ${crimsonPro.variable} ${bowlbyOne.variable}`}>
-        {children}
+        <Nav />
+        <main>{children}</main>
       </body>
     </html>
   )
