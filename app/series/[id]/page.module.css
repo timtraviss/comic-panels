@@ -1,0 +1,18 @@
+.page { padding: 40px 0 80px; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+.header { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start; margin-bottom: 56px; }
+.coverCol { flex-shrink: 0; }
+.info { display: flex; flex-direction: column; gap: 16px; }
+.eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; }
+.title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 64px); line-height: 1; margin: 0; }
+.metaRow { display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--text-sub); flex-wrap: wrap; }
+.desc { font-size: 15px; line-height: 1.7; color: var(--text-sub); max-width: 600px; margin: 0; }
+.cta { display: inline-block; padding: 12px 24px; background: var(--brand); color: #000; font-weight: 700; border-radius: var(--radius-pill); font-size: 14px; width: fit-content; text-decoration: none; transition: opacity 0.15s, transform 0.15s; }
+.cta:hover { opacity: 0.88; transform: translateY(-1px); }
+.issuesSection { display: flex; flex-direction: column; gap: 24px; }
+.sectionHead { font-family: var(--font-display); font-size: 20px; margin: 0; }
+.grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(5, 1fr); } .header { grid-template-columns: 180px 1fr; } }
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); } .header { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cta { transition: none; } }

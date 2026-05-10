@@ -1,0 +1,2 @@
+.btn { padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--border); background: transparent; color: var(--text-sub); font-size: 13px; cursor: pointer; font-family: inherit; }
+.btn:hover { border-color: var(--text-sub); color: var(--text); }
