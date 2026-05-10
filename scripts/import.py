@@ -236,9 +236,11 @@ def main():
     update: {{}},
     create: {{ id: {escape(creator_slug)}, name: {escape(str(person))} }},
   }});""")
-                credit_id = str(uuid.uuid4())
-                cred_block.append(f"""  await prisma.issueCredit.create({{
-    data: {{
+                credit_id = f"{issue_id}-{creator_slug}-{role.lower()}"
+                cred_block.append(f"""  await prisma.issueCredit.upsert({{
+    where: {{ id: {escape(credit_id)} }},
+    update: {{}},
+    create: {{
       id: {escape(credit_id)},
       issueId: {escape(issue_id)},
       creatorId: {escape(creator_slug)},
@@ -264,6 +266,8 @@ if (fs.existsSync(envPath)) {{
 
 const directUrl = (process.env.DIRECT_URL ?? process.env.DATABASE_URL ?? '')
   .replace(':6543/', ':5432/')
+  .replace('?pgbouncer=true&', '?')
+  .replace('&pgbouncer=true', '')
   .replace('?pgbouncer=true', '')
 
 const pool = new Pool({{ connectionString: directUrl }})

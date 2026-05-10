@@ -16,6 +16,8 @@ if (fs.existsSync(envPath)) {
 
 const directUrl = (process.env.DIRECT_URL ?? process.env.DATABASE_URL ?? '')
   .replace(':6543/', ':5432/')
+  .replace('?pgbouncer=true&', '?')
+  .replace('&pgbouncer=true', '')
   .replace('?pgbouncer=true', '')
 
 const pool = new Pool({ connectionString: directUrl })
@@ -982,10 +984,10 @@ async function main() {
     },
   });
   await prisma.issue.upsert({
-    where: { id: "dc-batman-a-death-in-the-family-unknown-29db4e86" },
+    where: { id: "dc-batman-a-death-in-the-family-unknown-322c614f" },
     update: {},
     create: {
-      id: "dc-batman-a-death-in-the-family-unknown-29db4e86",
+      id: "dc-batman-a-death-in-the-family-unknown-322c614f",
       seriesId: "dc-batman-a-death-in-the-family",
       number: null,
       coverDate: new Date("1989-01-01"),
@@ -5864,2497 +5866,3121 @@ async function main() {
   });
 
   // Credits
-  await prisma.issueCredit.create({
-    data: {
-      id: "a6da9903-d793-4679-aa74-e25bd97a1887",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-1-garth-ennis-writer" },
+    update: {},
+    create: {
+      id: "avatar-303-1-garth-ennis-writer",
       issueId: "avatar-303-1",
       creatorId: "garth-ennis",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "eb2bc6ad-2a11-4829-a1d9-95bc41c58da4",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-1-jacen-burrows-artist" },
+    update: {},
+    create: {
+      id: "avatar-303-1-jacen-burrows-artist",
       issueId: "avatar-303-1",
       creatorId: "jacen-burrows",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f4b82f68-d79b-4004-bdf9-3d99707c9226",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-2-garth-ennis-writer" },
+    update: {},
+    create: {
+      id: "avatar-303-2-garth-ennis-writer",
       issueId: "avatar-303-2",
       creatorId: "garth-ennis",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5447aa48-798e-4a1e-81a9-74d5b1b800a2",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-2-jacen-burrows-artist" },
+    update: {},
+    create: {
+      id: "avatar-303-2-jacen-burrows-artist",
       issueId: "avatar-303-2",
       creatorId: "jacen-burrows",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f3c3889c-c307-476d-9167-55a071edbca0",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-3-garth-ennis-writer" },
+    update: {},
+    create: {
+      id: "avatar-303-3-garth-ennis-writer",
       issueId: "avatar-303-3",
       creatorId: "garth-ennis",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "466108fa-d1a4-4b69-ba64-8a6af1c77256",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-3-jacen-burrows-artist" },
+    update: {},
+    create: {
+      id: "avatar-303-3-jacen-burrows-artist",
       issueId: "avatar-303-3",
       creatorId: "jacen-burrows",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a3b5aa1f-6770-4719-b034-c7cb3b9cd734",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-4-garth-ennis-writer" },
+    update: {},
+    create: {
+      id: "avatar-303-4-garth-ennis-writer",
       issueId: "avatar-303-4",
       creatorId: "garth-ennis",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "19a7c046-927e-4fdf-a36b-0eaac1dd7088",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-4-jacen-burrows-artist" },
+    update: {},
+    create: {
+      id: "avatar-303-4-jacen-burrows-artist",
       issueId: "avatar-303-4",
       creatorId: "jacen-burrows",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "752b4caa-d168-4527-8b06-c23a3916fbef",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-5-garth-ennis-writer" },
+    update: {},
+    create: {
+      id: "avatar-303-5-garth-ennis-writer",
       issueId: "avatar-303-5",
       creatorId: "garth-ennis",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b83b720a-0632-4997-aa87-0bb539bfcbde",
+  await prisma.issueCredit.upsert({
+    where: { id: "avatar-303-5-jacen-burrows-artist" },
+    update: {},
+    create: {
+      id: "avatar-303-5-jacen-burrows-artist",
       issueId: "avatar-303-5",
       creatorId: "jacen-burrows",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c20d70fb-0488-4220-84ff-47374531a7cf",
-      issueId: "dc-batman-a-death-in-the-family-unknown-29db4e86",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-a-death-in-the-family-unknown-322c614f-jim-starlin-writer" },
+    update: {},
+    create: {
+      id: "dc-batman-a-death-in-the-family-unknown-322c614f-jim-starlin-writer",
+      issueId: "dc-batman-a-death-in-the-family-unknown-322c614f",
       creatorId: "jim-starlin",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "03a10228-09aa-412e-8d8e-1a501e0120ab",
-      issueId: "dc-batman-a-death-in-the-family-unknown-29db4e86",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-a-death-in-the-family-unknown-322c614f-jim-aparo-artist" },
+    update: {},
+    create: {
+      id: "dc-batman-a-death-in-the-family-unknown-322c614f-jim-aparo-artist",
+      issueId: "dc-batman-a-death-in-the-family-unknown-322c614f",
       creatorId: "jim-aparo",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b841046a-ec8a-4dbb-9e1d-22cc2081db1f",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-and-robin-1-grant-morrison-writer" },
+    update: {},
+    create: {
+      id: "dc-batman-and-robin-1-grant-morrison-writer",
       issueId: "dc-batman-and-robin-1",
       creatorId: "grant-morrison",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c0b00efe-4400-46bb-b96d-8b9b4d4bf67a",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-and-robin-1-frank-quitely-artist" },
+    update: {},
+    create: {
+      id: "dc-batman-and-robin-1-frank-quitely-artist",
       issueId: "dc-batman-and-robin-1",
       creatorId: "frank-quitely",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8132b5ca-9245-4b96-85c6-04d72ad27541",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-and-robin-2-grant-morrison-writer" },
+    update: {},
+    create: {
+      id: "dc-batman-and-robin-2-grant-morrison-writer",
       issueId: "dc-batman-and-robin-2",
       creatorId: "grant-morrison",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3f507426-cd12-45cf-9c4f-edae22130b2e",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-and-robin-2-frank-quitely-artist" },
+    update: {},
+    create: {
+      id: "dc-batman-and-robin-2-frank-quitely-artist",
       issueId: "dc-batman-and-robin-2",
       creatorId: "frank-quitely",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "dc165b26-9c87-4454-9d3a-be19a9697be1",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-annual-15-alan-grant-writer" },
+    update: {},
+    create: {
+      id: "dc-batman-annual-15-alan-grant-writer",
       issueId: "dc-batman-annual-15",
       creatorId: "alan-grant",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4d2e5763-1ce0-43d1-b504-a4b55dda1c33",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-batman-annual-15-jim-fern-artist" },
+    update: {},
+    create: {
+      id: "dc-batman-annual-15-jim-fern-artist",
       issueId: "dc-batman-annual-15",
       creatorId: "jim-fern",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2305d07b-154b-405b-ae80-b4e78dde9160",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-black-ops-3-bury-writer" },
+    update: {},
+    create: {
+      id: "image-black-ops-3-bury-writer",
       issueId: "image-black-ops-3",
       creatorId: "bury",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b33caa93-0a7c-4688-aa98-0b28c9f2c317",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-black-ops-3-norton-artist" },
+    update: {},
+    create: {
+      id: "image-black-ops-3-norton-artist",
       issueId: "image-black-ops-3",
       creatorId: "norton",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "09d2e40d-1b7d-4224-a3e0-9434277d8cf3",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-253-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-253-mark-evanier-writer",
       issueId: "dc-blackhawk-253",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ab020ba7-4e5b-421f-9a7c-d1da65381097",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-253-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-253-dan-spiegle-artist",
       issueId: "dc-blackhawk-253",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4bc0c214-f2c5-4d67-b0cc-0319c6fca113",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-255-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-255-mark-evanier-writer",
       issueId: "dc-blackhawk-255",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ecf9c999-6d29-4a98-8907-2010ddd2f4d1",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-255-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-255-dan-spiegle-artist",
       issueId: "dc-blackhawk-255",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f0698275-96e3-44d9-a659-407a3f0bcb5a",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-259-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-259-mark-evanier-writer",
       issueId: "dc-blackhawk-259",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "73f6e152-8870-46dd-9334-6a54fef5918c",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-259-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-259-dan-spiegle-artist",
       issueId: "dc-blackhawk-259",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b2795367-db97-4313-8c3b-01eea5633806",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-262-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-262-mark-evanier-writer",
       issueId: "dc-blackhawk-262",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c821592d-c68e-4f7f-b3b5-4f4704f6ab6c",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-262-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-262-dan-spiegle-artist",
       issueId: "dc-blackhawk-262",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3f64ae89-d8c2-49b5-bb35-89d918615b3f",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-263-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-263-mark-evanier-writer",
       issueId: "dc-blackhawk-263",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "867df2a3-c27b-47c4-8019-f69e2c5787ea",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-263-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-263-dan-spiegle-artist",
       issueId: "dc-blackhawk-263",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3a61acbc-6f45-4a5a-ac7e-52959defc962",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-265-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-265-mark-evanier-writer",
       issueId: "dc-blackhawk-265",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "09e039e3-aa1b-41e9-a7dc-3171305d0aae",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-265-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-265-dan-spiegle-artist",
       issueId: "dc-blackhawk-265",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "703c35aa-cc23-49b6-872c-0f02daee459e",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-266-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-266-mark-evanier-writer",
       issueId: "dc-blackhawk-266",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "56d33803-c6c0-4e09-b881-ad5b34414943",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-266-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-266-dan-spiegle-artist",
       issueId: "dc-blackhawk-266",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "cb47bdd1-ea1e-47e0-b2d6-76eab2e248b6",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-267-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-267-mark-evanier-writer",
       issueId: "dc-blackhawk-267",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7553b796-308c-43c7-a76d-1f508472860b",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-267-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-267-dan-spiegle-artist",
       issueId: "dc-blackhawk-267",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e03b0322-1b42-4e0a-8592-0d65048a5033",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-268-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-268-mark-evanier-writer",
       issueId: "dc-blackhawk-268",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7be835c1-a226-43c8-ba9d-57d94323b613",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-268-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-268-dan-spiegle-artist",
       issueId: "dc-blackhawk-268",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "237538e5-b48b-4f4a-99a1-cc5cb62badda",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-269-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-269-mark-evanier-writer",
       issueId: "dc-blackhawk-269",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6a0393bf-fe0d-4115-a456-d90255aea495",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-269-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-269-dan-spiegle-artist",
       issueId: "dc-blackhawk-269",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9d05220b-8a40-4dff-8a3c-46f2601b96f8",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-270-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-270-mark-evanier-writer",
       issueId: "dc-blackhawk-270",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ef35c77e-916a-42ab-a169-bf0933c26db2",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-270-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-270-dan-spiegle-artist",
       issueId: "dc-blackhawk-270",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9438bd1e-9e47-491c-a67c-bd6b7ac9912f",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-271-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-271-mark-evanier-writer",
       issueId: "dc-blackhawk-271",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "fc192dd5-ae7d-40a0-ac5d-faf633679508",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-271-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-271-dan-spiegle-artist",
       issueId: "dc-blackhawk-271",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7eebdc82-c79c-4800-8256-45e7d3e5216a",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-272-mark-evanier-writer" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-272-mark-evanier-writer",
       issueId: "dc-blackhawk-272",
       creatorId: "mark-evanier",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "53fa441a-6d13-4255-9311-985e11694a4b",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-blackhawk-272-dan-spiegle-artist" },
+    update: {},
+    create: {
+      id: "dc-blackhawk-272-dan-spiegle-artist",
       issueId: "dc-blackhawk-272",
       creatorId: "dan-spiegle",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a0eec1ac-b3ae-44a2-987a-479defbe43a8",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-0-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-0-j-scott-campbell-writer",
       issueId: "image-danger-girl-0",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8ad1670e-2b19-4d80-922b-b72ccf706753",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-0-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-0-j-scott-campbell-artist",
       issueId: "image-danger-girl-0",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4da9d238-5a83-436a-957e-08f8a8e9159d",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-1-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-1-j-scott-campbell-writer",
       issueId: "image-danger-girl-1",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "436ee177-497a-4f9b-8f62-c5286e026d11",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-1-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-1-j-scott-campbell-artist",
       issueId: "image-danger-girl-1",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8663a5e4-b2bb-4a11-89b8-fa3637183165",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-2-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-2-j-scott-campbell-writer",
       issueId: "image-danger-girl-2",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0f20f3d4-47f6-46ad-b850-3b49279c05cc",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-2-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-2-j-scott-campbell-artist",
       issueId: "image-danger-girl-2",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "80c317a4-bcb0-41bb-96fc-7cc1bae153ab",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-3-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-3-j-scott-campbell-writer",
       issueId: "image-danger-girl-3",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "af166332-ad99-4eac-9e0d-cba0c077dde6",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-3-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-3-j-scott-campbell-artist",
       issueId: "image-danger-girl-3",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9b095792-a2cb-4c31-bb94-054c0fd5fe73",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-4-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-4-j-scott-campbell-writer",
       issueId: "image-danger-girl-4",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "cd332c66-746a-46f7-8ce4-518e187cfa66",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-4-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-4-j-scott-campbell-artist",
       issueId: "image-danger-girl-4",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5ca35e59-745a-4710-bc6c-dc26375a5c2c",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-5-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-5-j-scott-campbell-writer",
       issueId: "image-danger-girl-5",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e094bff7-1a0d-4b5c-89b5-701b28416899",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-5-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-5-j-scott-campbell-artist",
       issueId: "image-danger-girl-5",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1da9f5aa-37e9-4263-9f9f-42a73ebd100b",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-6-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-6-j-scott-campbell-writer",
       issueId: "image-danger-girl-6",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "796278cd-f70f-4b9b-b28a-b65748c24723",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-6-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-6-j-scott-campbell-artist",
       issueId: "image-danger-girl-6",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3134f3cf-62ac-465f-8911-8a34cd2d1cab",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-7-j-scott-campbell-writer" },
+    update: {},
+    create: {
+      id: "image-danger-girl-7-j-scott-campbell-writer",
       issueId: "image-danger-girl-7",
       creatorId: "j-scott-campbell",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "99f293e3-a016-4d6f-97d2-5f432832abac",
+  await prisma.issueCredit.upsert({
+    where: { id: "image-danger-girl-7-j-scott-campbell-artist" },
+    update: {},
+    create: {
+      id: "image-danger-girl-7-j-scott-campbell-artist",
       issueId: "image-danger-girl-7",
       creatorId: "j-scott-campbell",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "784da81b-4b13-4dc5-bbc8-d9c7f2ffd26d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-18-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-18-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-18",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c79ab301-ed0b-44d6-b2eb-1e632e9c5ca5",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-18-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-18-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-18",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "58f0087e-79a1-4707-9133-01516fd0a370",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-19-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-19-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-19",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c7f329a1-145e-4475-9f3e-ef5f14d3db99",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-19-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-19-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-19",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2a903621-d7b1-40b9-bdbb-b1024d7de900",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-21-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-21-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-21",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3e3001f2-38ac-47cd-99bc-bf66253f62b2",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-21-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-21-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-21",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b7e209f0-8a10-4ae4-99b5-de332258e076",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-22-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-22-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-22",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ab4511dd-2fd6-4fe1-82ab-b072c72b4a77",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-22-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-22-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-22",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f1397fb6-fcb5-4545-b866-66d109d3f8c0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-23-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-23-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-23",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "157e23c6-8ea7-4a8f-b0d5-8ba3a9c13871",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-23-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-23-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-23",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "bdb5cfdb-9efd-48e5-843d-56f8b1da30d4",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-26-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-26-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-26",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "628262a4-e9ae-44f3-9bf4-788a5b4e8a88",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-26-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-26-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-26",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c78d591a-d21b-4fe0-a612-212b057031c6",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-27-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-27-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-27",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1d29195a-09fa-4726-a79b-36fc9f2bc15b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-27-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-27-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-27",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0116c3a2-bd5e-4340-b114-3189eb0048aa",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-28-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-28-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-28",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c213c34f-8cb1-4f69-8fe0-ecbaaed0a9ab",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-28-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-28-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-28",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9c93992e-dfaf-4b9f-8d74-0636456aa244",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-29-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-29-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-29",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1aebd0e7-0028-4122-ad54-822fab43fc73",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-29-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-29-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-29",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "704f1cc3-8716-4ca4-baf1-d776e3370d73",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-30-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-30-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-30",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5dcb2f4d-bff0-40d1-b3c5-627744e7857f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-30-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-30-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-30",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9b882511-042f-432f-b164-09873143615f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-31-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-31-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-31",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c994a43b-a48e-4d14-96ce-249163524fde",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-31-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-31-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-31",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "cc55bea9-c33f-433b-acaa-67be47bd182b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-32-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-32-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-32",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "35e29ba7-139b-40cf-bbfd-6ca96d68de4f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-32-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-32-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-32",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "63a9873c-c9ef-4f65-9d5b-f99252161abb",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-33-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-33-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-33",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4646d8ed-1815-4670-b38b-1e9fc45af934",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-33-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-33-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-33",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b11327fc-d36b-4c84-8c1d-e07ed593e56f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-39-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-39-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-39",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a8614b9e-26f7-4e21-93a2-cdec18775331",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-39-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-39-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-39",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "eaf17f17-1e6d-4b0e-93ac-f6cf763b7515",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-40-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-40-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-40",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "daf6a444-4455-437a-a6b2-263c31c3f28a",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-40-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-40-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-40",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "868dba14-79f3-4e8b-a6cc-d150c62ec1a7",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-48-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-48-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-48",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0624acb3-4774-4341-bd40-3a12d403d942",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-48-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-48-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-48",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "dab7d2fc-3043-4bc3-9ef4-4be8bf3eef6d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-50-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-50-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-50",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ae812fa0-0836-4970-812b-1a9cc972eb87",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-50-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-50-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-50",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d3fa2d5d-35c1-4060-834d-4a0e7e71efe0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-52-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-52-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-52",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "18a3e519-faf2-4206-936c-5915883587d6",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-52-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-52-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-52",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9121379c-a6ed-4fd1-8098-b81562d99b16",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-53-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-53-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-53",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c4029e09-4baa-4848-8cbb-4e16019528c6",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-53-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-53-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-53",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b5bbb9cf-ca92-4ced-9114-06c6d97e02ed",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-54-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-54-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-54",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "484a5eca-2343-42ad-ad54-616a2caba567",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-54-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-54-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-54",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5b806b34-1602-4eae-aecb-c2cf9be7ae7c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-55-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-55-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-55",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7755378a-8f21-4b3a-ac2c-d7d50128e2ad",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-55-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-55-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-55",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "368d0e65-fc16-4491-a7b2-08dc182ac3a7",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-57-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-57-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-57",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "85dd2313-50f7-4b8b-8662-c859f9f3a25b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-57-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-57-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-57",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8245c874-13d7-49ce-93ed-7eab9777c543",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-58-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-58-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-58",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1ae85480-ef04-454a-88ca-51cc016be44c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-58-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-58-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-58",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "81e779ac-b9ce-4b45-81d8-1806e7c717b2",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-59-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-59-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-59",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c948fe27-4798-4bae-82a9-fc9d3959f824",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-59-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-59-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-59",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "51782536-1e6f-47a8-9ac3-83c599429d7b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-60-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-60-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-60",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1ca00896-09ae-4ce0-ba81-0b5bb54add8d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-60-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-60-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-60",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "26e882fa-2005-499b-853d-8f71f51ad7c1",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-61-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-61-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-61",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a15ff095-f86e-4f2e-9367-0a6caf422a3e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-61-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-61-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-61",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a9a667d0-2b4b-4c3b-a536-97499424ce06",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-62-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-62-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-62",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "20751302-7e0f-415c-abc9-6e1d4b975c29",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-62-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-62-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-62",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "45f1b15f-0cc6-45a9-8fb0-240f1e7766c9",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-63-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-63-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-63",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9de95bbf-b7b3-49b1-b9ab-7027d925bd41",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-63-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-63-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-63",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a3682b4a-6fd8-469e-a745-a804281dfc26",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-64-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-64-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-64",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4691ec84-7620-476b-a05f-64106d969431",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-64-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-64-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-64",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "db4e41a6-d4d0-48d8-a280-30728584a81b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-65-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-65-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-65",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "779c30d0-1bb1-4720-acf9-3d9afb19d6b8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-65-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-65-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-65",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a893f9c1-aa19-445a-9b22-984bb4a18cd3",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-66-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-66-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-66",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "474d92d2-540a-4402-ba36-88dc0f46750f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-66-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-66-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-66",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1e202753-97b3-492f-a42c-0e6aa3ac42e0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-67-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-67-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-67",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9ca03feb-efd9-40cb-8fc1-0ed4dfb76d7a",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-67-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-67-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-67",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9c6130cc-8e6e-42c2-ac62-250be5180e7c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-68-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-68-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-68",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8f86ff12-1253-42b8-9d5b-c69681c73951",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-68-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-68-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-68",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "338a4077-5548-41a5-9604-55298e5237be",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-69-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-69-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-69",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "21b78f76-e6f3-44b3-aed7-39abd4a553da",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-69-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-69-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-69",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8ef9b641-f384-4be3-8d7c-1840f98a646e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-70-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-70-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-70",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c1f76c1e-cfd5-41db-a48f-a65e1d91bd63",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-70-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-70-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-70",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a75df56d-857c-4757-8517-d94ea181120c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-71-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-71-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-71",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7666ccff-26fb-42d4-815f-a704b204686e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-71-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-71-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-71",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5e435647-bc08-40e4-8c31-58d6466fc987",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-72-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-72-sergio-aragones-writer",
       issueId: "marvel-groo-the-wanderer-72",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f021800a-1c26-4096-b790-d9caec429abc",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-groo-the-wanderer-72-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "marvel-groo-the-wanderer-72-sergio-aragones-artist",
       issueId: "marvel-groo-the-wanderer-72",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "77669379-7d1c-40f2-bc8a-ca2cfa233b01",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-1-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-1-jock-any-dingle-writer",
       issueId: "vertigo-losers-1",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c0e5c543-21a6-4354-92e7-89c25c95d00d",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-1-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-1-clem-robins-artist",
       issueId: "vertigo-losers-1",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1fc1f532-5e92-4bbb-8947-ed7156237bc7",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-10-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-10-jock-any-dingle-writer",
       issueId: "vertigo-losers-10",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9d785a8b-3e0a-4d6f-b9b8-2cb751497273",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-10-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-10-clem-robins-artist",
       issueId: "vertigo-losers-10",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1337db1f-39ea-4f90-bb4b-8f94962a16e4",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-11-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-11-jock-any-dingle-writer",
       issueId: "vertigo-losers-11",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "91fb9170-e452-4531-96ad-41d9609c8b2c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-11-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-11-clem-robins-artist",
       issueId: "vertigo-losers-11",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "78881664-907f-46ac-9075-42ac824c5107",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-12-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-12-jock-any-dingle-writer",
       issueId: "vertigo-losers-12",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "76cae761-eb98-4bc2-9dad-9f4c0e0055ee",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-12-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-12-clem-robins-artist",
       issueId: "vertigo-losers-12",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c9a7c1a4-2914-4941-9623-075f862f6280",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-13-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-13-jock-any-dingle-writer",
       issueId: "vertigo-losers-13",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "02db54fe-c8cf-4c55-b3f3-2555d39af080",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-13-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-13-clem-robins-artist",
       issueId: "vertigo-losers-13",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f9d045d1-0649-46ca-9287-d504c7b68682",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-14-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-14-jock-any-dingle-writer",
       issueId: "vertigo-losers-14",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "03f00294-f8c7-4650-8adb-af4e9639c096",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-14-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-14-clem-robins-artist",
       issueId: "vertigo-losers-14",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2a70fe9a-bdba-4739-9ac1-b393372d53a6",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-15-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-15-jock-any-dingle-writer",
       issueId: "vertigo-losers-15",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d3963d98-22d6-4f33-9633-9ca03962865a",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-15-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-15-clem-robins-artist",
       issueId: "vertigo-losers-15",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "bb02f4a1-a1e4-49df-985a-cad900ad46b0",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-16-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-16-jock-any-dingle-writer",
       issueId: "vertigo-losers-16",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "19ef12cc-33e2-406e-b59e-c41ec5b98759",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-16-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-16-clem-robins-artist",
       issueId: "vertigo-losers-16",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9d84ec1a-63f7-4d59-bcdd-c2b7ab5d4753",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-17-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-17-jock-any-dingle-writer",
       issueId: "vertigo-losers-17",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "82e2b102-dfe2-4665-8d73-90f79953796c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-17-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-17-clem-robins-artist",
       issueId: "vertigo-losers-17",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f79c1682-0fe1-4363-9349-a89983a5bde5",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-18-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-18-jock-any-dingle-writer",
       issueId: "vertigo-losers-18",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d07a3485-0149-4ca2-8e4b-7aa4484251b0",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-18-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-18-clem-robins-artist",
       issueId: "vertigo-losers-18",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9c51c04b-6c4a-4045-ba8a-d3a7ff87178c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-19-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-19-jock-any-dingle-writer",
       issueId: "vertigo-losers-19",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "74f0c640-6bb1-4f63-b247-e755edffaf06",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-19-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-19-clem-robins-artist",
       issueId: "vertigo-losers-19",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "13e33096-6c41-4d10-85fa-15402cb9a50c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-2-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-2-jock-any-dingle-writer",
       issueId: "vertigo-losers-2",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "bfe630d3-2ea5-4c96-9bd8-f3c8df617c6f",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-2-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-2-clem-robins-artist",
       issueId: "vertigo-losers-2",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0a885d0b-141e-4a00-8465-0532e5a59410",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-20-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-20-jock-any-dingle-writer",
       issueId: "vertigo-losers-20",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1450123b-4c36-43ff-b5a8-af1d64891aeb",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-20-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-20-clem-robins-artist",
       issueId: "vertigo-losers-20",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b3dbb369-23c5-48a3-b4b4-9abf08299f72",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-21-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-21-jock-any-dingle-writer",
       issueId: "vertigo-losers-21",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5001ed2c-c2e4-4a28-abde-82fd668f3f7a",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-21-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-21-clem-robins-artist",
       issueId: "vertigo-losers-21",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b4943e82-1ed6-4c64-8b0d-a05e081f67ca",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-22-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-22-jock-any-dingle-writer",
       issueId: "vertigo-losers-22",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c781b31a-e811-40af-83eb-3ecceadaa095",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-22-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-22-clem-robins-artist",
       issueId: "vertigo-losers-22",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6ae2e60c-6b5b-4313-8bc2-54ba92533f70",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-23-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-23-jock-any-dingle-writer",
       issueId: "vertigo-losers-23",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "170c17ac-6698-41a4-94b6-1f4887847ef3",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-23-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-23-clem-robins-artist",
       issueId: "vertigo-losers-23",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2b827ad4-2e46-410c-bced-af1466b76c98",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-24-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-24-jock-any-dingle-writer",
       issueId: "vertigo-losers-24",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4c1a5fe5-fcde-481e-8118-c1bf2d97c8b1",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-24-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-24-clem-robins-artist",
       issueId: "vertigo-losers-24",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "dd841a02-6df5-425b-910a-4b9e7a3b8959",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-25-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-25-jock-any-dingle-writer",
       issueId: "vertigo-losers-25",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "618c3867-59fb-49ba-b5da-2efe94cbeed7",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-25-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-25-clem-robins-artist",
       issueId: "vertigo-losers-25",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3cd3888e-bcba-4150-b1f1-65f902a2f229",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-26-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-26-jock-any-dingle-writer",
       issueId: "vertigo-losers-26",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3da49ca3-ccbf-4c7a-baaa-86a8fc9942a3",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-26-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-26-clem-robins-artist",
       issueId: "vertigo-losers-26",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9bb2e8fd-2168-4a4e-ad11-b9f49139848b",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-27-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-27-jock-any-dingle-writer",
       issueId: "vertigo-losers-27",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "053641ff-725a-490a-b607-932a2ebaa08c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-27-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-27-clem-robins-artist",
       issueId: "vertigo-losers-27",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0e2a03e8-064c-4670-af9c-6d7481dcd7c5",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-28-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-28-jock-any-dingle-writer",
       issueId: "vertigo-losers-28",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6c108798-f321-4ce3-8dcc-8a0c2386c7ff",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-28-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-28-clem-robins-artist",
       issueId: "vertigo-losers-28",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a31fa2b5-7059-4dde-8be3-db2078bdbebf",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-29-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-29-jock-any-dingle-writer",
       issueId: "vertigo-losers-29",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f928e894-8e37-40ff-801c-6963038fb95e",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-29-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-29-clem-robins-artist",
       issueId: "vertigo-losers-29",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d72cfc2e-30c1-469a-b663-63dc43ac873e",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-3-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-3-jock-any-dingle-writer",
       issueId: "vertigo-losers-3",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "484735df-edb0-4869-837c-c517a4c023c5",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-3-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-3-clem-robins-artist",
       issueId: "vertigo-losers-3",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e35034d1-6530-49ee-bce7-6864e5d193fe",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-30-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-30-jock-any-dingle-writer",
       issueId: "vertigo-losers-30",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c8c84f5a-a52a-4a39-ae63-dca43edda573",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-30-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-30-clem-robins-artist",
       issueId: "vertigo-losers-30",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "82f7ec56-3a21-492c-87e8-384485c9f039",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-31-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-31-jock-any-dingle-writer",
       issueId: "vertigo-losers-31",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2740a837-8c81-4157-b64c-ff7be263aaf0",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-31-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-31-clem-robins-artist",
       issueId: "vertigo-losers-31",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8c7c281d-3984-416a-8b48-d86890d1e85c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-32-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-32-jock-any-dingle-writer",
       issueId: "vertigo-losers-32",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0cdefb8b-9d72-4f6f-bb6c-8ef49c77ebbd",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-32-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-32-clem-robins-artist",
       issueId: "vertigo-losers-32",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "37820d4d-7625-4a2f-a149-ed773179e117",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-4-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-4-jock-any-dingle-writer",
       issueId: "vertigo-losers-4",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b8d49051-5ffb-49a6-a7b2-73b88532a2ac",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-4-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-4-clem-robins-artist",
       issueId: "vertigo-losers-4",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a4054957-8980-4bb2-ac0c-c065391495eb",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-5-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-5-jock-any-dingle-writer",
       issueId: "vertigo-losers-5",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "196da580-0d61-4e5c-8258-680633bf8e98",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-5-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-5-clem-robins-artist",
       issueId: "vertigo-losers-5",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "1539731a-c5fc-4d70-93ee-fe1417d92ad1",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-6-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-6-jock-any-dingle-writer",
       issueId: "vertigo-losers-6",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8a32da8a-e8ba-44f5-8ee6-a857267c24e2",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-6-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-6-clem-robins-artist",
       issueId: "vertigo-losers-6",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a4c4e78d-78cd-449d-a957-40dc74a29be9",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-7-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-7-jock-any-dingle-writer",
       issueId: "vertigo-losers-7",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "40ed78fd-0cf7-490f-adad-a70a50d68ca4",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-7-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-7-clem-robins-artist",
       issueId: "vertigo-losers-7",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4974dd1c-21ad-48b8-a700-d96a2ba5c62b",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-8-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-8-jock-any-dingle-writer",
       issueId: "vertigo-losers-8",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d9097d57-30e4-4d1c-8bd8-fb2732be8d3c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-8-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-8-clem-robins-artist",
       issueId: "vertigo-losers-8",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d5d28120-1337-45a9-b355-434c21038056",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-9-jock-any-dingle-writer" },
+    update: {},
+    create: {
+      id: "vertigo-losers-9-jock-any-dingle-writer",
       issueId: "vertigo-losers-9",
       creatorId: "jock-any-dingle",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "21cb525c-6158-437c-97a8-afaecf363a0c",
+  await prisma.issueCredit.upsert({
+    where: { id: "vertigo-losers-9-clem-robins-artist" },
+    update: {},
+    create: {
+      id: "vertigo-losers-9-clem-robins-artist",
       issueId: "vertigo-losers-9",
       creatorId: "clem-robins",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "993c0efb-74e2-4f15-b1a9-1d4d60c030dc",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-marvel-team-up-96-alan-kupperberg-writer" },
+    update: {},
+    create: {
+      id: "marvel-marvel-team-up-96-alan-kupperberg-writer",
       issueId: "marvel-marvel-team-up-96",
       creatorId: "alan-kupperberg",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "77c0455b-717a-423a-93bd-06dfbd1b3482",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-marvel-team-up-96-alan-kupperberg-artist" },
+    update: {},
+    create: {
+      id: "marvel-marvel-team-up-96-alan-kupperberg-artist",
       issueId: "marvel-marvel-team-up-96",
       creatorId: "alan-kupperberg",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "06c89a89-d6b3-46a9-88c2-f3bf043a5f81",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-merc-1-peter-david-writer" },
+    update: {},
+    create: {
+      id: "marvel-merc-1-peter-david-writer",
       issueId: "marvel-merc-1",
       creatorId: "peter-david",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "68ec3bfa-e8b1-443d-a4ea-655fb475c141",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-merc-1-gray-morrow-artist" },
+    update: {},
+    create: {
+      id: "marvel-merc-1-gray-morrow-artist",
       issueId: "marvel-merc-1",
       creatorId: "gray-morrow",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e4028661-08d5-44c6-8def-7cf63aec97d3",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-merc-4-peter-david-writer" },
+    update: {},
+    create: {
+      id: "marvel-merc-4-peter-david-writer",
       issueId: "marvel-merc-4",
       creatorId: "peter-david",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b7430e17-2e54-44ff-93e1-c7dda10c6b15",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-merc-4-gray-morrow-artist" },
+    update: {},
+    create: {
+      id: "marvel-merc-4-gray-morrow-artist",
       issueId: "marvel-merc-4",
       creatorId: "gray-morrow",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "477bd3c3-36d5-4d45-930d-73cd1693e07f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-1-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-1-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-1",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "62d71cb8-a671-47a2-8090-f6543de02143",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-1-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-1-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-1",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "de696e41-363b-4f95-b8a2-aed6ccc413f4",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-10-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-10-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-10",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6278c56f-bfd9-45fa-957e-d230d835145d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-10-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-10-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-10",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "59cf3412-d791-42c0-b98b-52ee83766cb1",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-11-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-11-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-11",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "74b3cf29-958e-443e-be33-e65b4dac013e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-11-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-11-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-11",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3bc5ac93-b36d-4e93-8a52-12e0a7f7eb80",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-12-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-12-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-12",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a8c3d24a-b0ee-41e9-92d0-41eee3ea3cd0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-12-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-12-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-12",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "25fd2350-0143-47fb-b2f0-d97ba422cb3b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-13-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-13-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-13",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a605d787-a944-4d21-bca5-f8ad6cc5aef7",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-13-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-13-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-13",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8b2784df-2b9b-4c5a-89dc-487af3da1ed4",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-14-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-14-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-14",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "73bb5543-dbd5-4178-bf72-063533aace79",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-14-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-14-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-14",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3f52167c-46d9-4a3a-b168-62c627065e7e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-15-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-15-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-15",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5ec70207-7970-4810-8d3f-9d4b298fde27",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-15-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-15-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-15",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b22e4e2e-a3a7-4fe1-b5f7-ca75fa476e8a",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-16-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-16-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-16",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6adf6129-b857-4b6f-867a-a076a96bed18",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-16-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-16-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-16",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e467c20a-9dba-497c-a5d2-f60f24c2ca2b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-2-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-2-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-2",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "6e787ca0-15ac-4d62-8fea-3b9cd6b8e761",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-2-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-2-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-2",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "84f876b8-ca5d-4e27-bf9b-a909ce38dfa3",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-3-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-3-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-3",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d1f70ab0-9371-4d0d-bf28-ac398052448a",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-3-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-3-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-3",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "96a80c77-5c0b-4f2d-a9c0-1efb9178300b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-4-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-4-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-4",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "15a24e1f-e643-4320-8d8b-2200fcade2a5",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-4-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-4-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-4",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8a25e7dd-1ccc-4440-bfd5-b1c699d91740",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-5-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-5-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-5",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4fb0d51a-bcc0-4a07-bd15-03c3017d157b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-5-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-5-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-5",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e7caaa7d-e6e7-4ad6-b2e7-d05e5066e362",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-6-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-6-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-6",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "16c132c2-aee7-4477-a4df-960cca788809",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-6-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-6-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-6",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "620a76a4-35ab-49a8-b13f-f98f10ce56b0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-7-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-7-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-7",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "82c930a7-bb5a-4410-bdbe-2d44d734d14c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-7-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-7-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-7",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c21dd248-39f1-484b-89b8-7dd1b18a361d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-8-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-8-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-8",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5a408837-2c97-44e6-8fd9-a87cf8a24796",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-8-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-8-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-8",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7470b10a-a3e6-4ee4-b23a-70e48984d004",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-9-larry-hama-writer" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-9-larry-hama-writer",
       issueId: "marvel-nth-man-the-ultimate-ninja-9",
       creatorId: "larry-hama",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "007d93b3-7198-42a8-af24-c3b8f921162f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-nth-man-the-ultimate-ninja-9-ron-wagner-artist" },
+    update: {},
+    create: {
+      id: "marvel-nth-man-the-ultimate-ninja-9-ron-wagner-artist",
       issueId: "marvel-nth-man-the-ultimate-ninja-9",
       creatorId: "ron-wagner",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "be0770ef-7f04-4431-85e4-0b77d1105b73",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-silver-surfer-9-steve-englehart-writer" },
+    update: {},
+    create: {
+      id: "marvel-silver-surfer-9-steve-englehart-writer",
       issueId: "marvel-silver-surfer-9",
       creatorId: "steve-englehart",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5caf2479-e2c6-4e06-9b5c-589991da2bf0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-silver-surfer-9-marshall-rogers-artist" },
+    update: {},
+    create: {
+      id: "marvel-silver-surfer-9-marshall-rogers-artist",
       issueId: "marvel-silver-surfer-9",
       creatorId: "marshall-rogers",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "37a7b35c-473d-40a9-a1d2-b28c36e6ff8d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-spidey-super-stories-44-alan-kupperberg-writer" },
+    update: {},
+    create: {
+      id: "marvel-spidey-super-stories-44-alan-kupperberg-writer",
       issueId: "marvel-spidey-super-stories-44",
       creatorId: "alan-kupperberg",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9ee3cac0-b4ea-49e4-9bac-ed1d8e406c25",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-spidey-super-stories-44-winslow-mortimer-artist" },
+    update: {},
+    create: {
+      id: "marvel-spidey-super-stories-44-winslow-mortimer-artist",
       issueId: "marvel-spidey-super-stories-44",
       creatorId: "winslow-mortimer",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "952603d4-3f23-4a33-b7de-a58b35998543",
+  await prisma.issueCredit.upsert({
+    where: { id: "epic-the-groo-chronicles-2-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "epic-the-groo-chronicles-2-sergio-aragones-writer",
       issueId: "epic-the-groo-chronicles-2",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c6e1df97-38c3-44ff-9ac8-403ff8e80668",
+  await prisma.issueCredit.upsert({
+    where: { id: "epic-the-groo-chronicles-2-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "epic-the-groo-chronicles-2-sergio-aragones-artist",
       issueId: "epic-the-groo-chronicles-2",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "402b2c7c-4ab0-4ae6-aca3-36f2a0af91a8",
+  await prisma.issueCredit.upsert({
+    where: { id: "epic-the-groo-chronicles-5-sergio-aragones-writer" },
+    update: {},
+    create: {
+      id: "epic-the-groo-chronicles-5-sergio-aragones-writer",
       issueId: "epic-the-groo-chronicles-5",
       creatorId: "sergio-aragones",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "7a41267e-13e3-4ac7-a15c-4fcad69ff055",
+  await prisma.issueCredit.upsert({
+    where: { id: "epic-the-groo-chronicles-5-sergio-aragones-artist" },
+    update: {},
+    create: {
+      id: "epic-the-groo-chronicles-5-sergio-aragones-artist",
       issueId: "epic-the-groo-chronicles-5",
       creatorId: "sergio-aragones",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "5b93b3a7-03fa-456b-925b-e827313c1e50",
+  await prisma.issueCredit.upsert({
+    where: { id: "gold-key-the-pink-panther-68-depatie-writer" },
+    update: {},
+    create: {
+      id: "gold-key-the-pink-panther-68-depatie-writer",
       issueId: "gold-key-the-pink-panther-68",
       creatorId: "depatie",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4af8106d-480a-4ed0-93d4-9f89077ac36d",
+  await prisma.issueCredit.upsert({
+    where: { id: "gold-key-the-pink-panther-68-freleng-artist" },
+    update: {},
+    create: {
+      id: "gold-key-the-pink-panther-68-freleng-artist",
       issueId: "gold-key-the-pink-panther-68",
       creatorId: "freleng",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "81d57c06-3a28-47fe-a8bf-bf477cd69f06",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-30-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-30-mike-baron-writer",
       issueId: "marvel-the-punisher-30",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "595f150e-e449-47e2-b079-7593cd1f4852",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-30-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-30-bill-reinhold-artist",
       issueId: "marvel-the-punisher-30",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "fe2b2943-0123-4113-bb96-febcd84ae08d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-31-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-31-mike-baron-writer",
       issueId: "marvel-the-punisher-31",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ac0d3611-d6e5-4060-9449-9f9e1208912d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-31-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-31-bill-reinhold-artist",
       issueId: "marvel-the-punisher-31",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8b8a047d-a7f0-4ba0-bd61-44db0074313b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-32-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-32-mike-baron-writer",
       issueId: "marvel-the-punisher-32",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "fd30d7d1-f9b4-4b40-8a49-8895292c8830",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-32-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-32-bill-reinhold-artist",
       issueId: "marvel-the-punisher-32",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "95829c69-023d-45d4-afed-054baed6f957",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-33-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-33-mike-baron-writer",
       issueId: "marvel-the-punisher-33",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b591eae3-aa50-4f9b-8cf4-4a565dc8933d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-33-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-33-bill-reinhold-artist",
       issueId: "marvel-the-punisher-33",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "58a0c5a6-4be9-4c7e-844d-2e211917939d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-34-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-34-mike-baron-writer",
       issueId: "marvel-the-punisher-34",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "a297a511-d3a6-4bd2-b9c9-d3399547503d",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-34-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-34-bill-reinhold-artist",
       issueId: "marvel-the-punisher-34",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "30b9732c-2200-44bc-acb8-fc46ab631771",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-35-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-35-mike-baron-writer",
       issueId: "marvel-the-punisher-35",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8bd9d99d-d09c-4de5-a092-5ddfeb06c3a8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-35-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-35-bill-reinhold-artist",
       issueId: "marvel-the-punisher-35",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "acc09e6c-cf40-4323-a708-28af40cf9668",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-36-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-36-mike-baron-writer",
       issueId: "marvel-the-punisher-36",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d04cb64f-6055-4174-840a-adb2095e52ea",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-36-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-36-bill-reinhold-artist",
       issueId: "marvel-the-punisher-36",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c4bdb8a1-4132-4ea1-a011-68a5e294d32e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-37-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-37-mike-baron-writer",
       issueId: "marvel-the-punisher-37",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "2d89a6bd-c8a3-49e0-8522-41410da237c4",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-37-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-37-bill-reinhold-artist",
       issueId: "marvel-the-punisher-37",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0d08245a-2d7a-4c8d-8459-88676efb34aa",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-38-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-38-mike-baron-writer",
       issueId: "marvel-the-punisher-38",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0adc9149-6791-4a9e-bcc6-655a006fcd65",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-38-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-38-bill-reinhold-artist",
       issueId: "marvel-the-punisher-38",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "dfc832b9-2967-404c-a450-81d2920237e8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-39-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-39-mike-baron-writer",
       issueId: "marvel-the-punisher-39",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e51a86e1-28d0-4374-9372-892e2d28dfeb",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-39-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-39-bill-reinhold-artist",
       issueId: "marvel-the-punisher-39",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "8b8052a5-cd97-49a3-b6eb-8d9e77c1a70f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-40-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-40-mike-baron-writer",
       issueId: "marvel-the-punisher-40",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c804d38d-843e-401c-8228-22f00f27ae1f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-40-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-40-bill-reinhold-artist",
       issueId: "marvel-the-punisher-40",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "83e8ed89-d1c2-4274-8eb3-1c54b00e7b02",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-41-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-41-mike-baron-writer",
       issueId: "marvel-the-punisher-41",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c86024e9-e246-4cdc-aad3-aca64ae27a1b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-41-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-41-bill-reinhold-artist",
       issueId: "marvel-the-punisher-41",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "54e97d36-23a8-423a-bb08-be77c8e3d03a",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-43-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-43-mike-baron-writer",
       issueId: "marvel-the-punisher-43",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3934f1c1-6eaa-412b-a8f2-1e3e050b716e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-43-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-43-bill-reinhold-artist",
       issueId: "marvel-the-punisher-43",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "fa2f9ab5-508f-45b1-b55b-9008c93cddf1",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-44-mike-baron-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-44-mike-baron-writer",
       issueId: "marvel-the-punisher-44",
       creatorId: "mike-baron",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d48fca81-2351-4a00-84c4-7dc91d144816",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-punisher-44-bill-reinhold-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-punisher-44-bill-reinhold-artist",
       issueId: "marvel-the-punisher-44",
       creatorId: "bill-reinhold",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9e1dc301-46b6-4cef-b117-34e8ac11f066",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-10-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-10-bob-budiansky-writer",
       issueId: "marvel-the-transformers-10",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b2bb7617-57b1-4523-b3c7-6908443b2fb3",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-10-ricardo-villamonte-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-10-ricardo-villamonte-artist",
       issueId: "marvel-the-transformers-10",
       creatorId: "ricardo-villamonte",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ddb3fd63-47cf-458c-a47c-ac7e2b12dc30",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-11-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-11-bob-budiansky-writer",
       issueId: "marvel-the-transformers-11",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "85a9cbbe-385f-4e6f-8651-c77ec8605538",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-11-ricardo-villamonte-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-11-ricardo-villamonte-artist",
       issueId: "marvel-the-transformers-11",
       creatorId: "ricardo-villamonte",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "45054568-14f8-40bb-8bac-c09c6195f231",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-12-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-12-bob-budiansky-writer",
       issueId: "marvel-the-transformers-12",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f0c5ffd7-4ea3-40ba-ba07-56dfe1c908df",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-12-ricardo-villamonte-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-12-ricardo-villamonte-artist",
       issueId: "marvel-the-transformers-12",
       creatorId: "ricardo-villamonte",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "3671320c-39df-451c-952a-469304c5f923",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-20-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-20-bob-budiansky-writer",
       issueId: "marvel-the-transformers-20",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "374c2ba0-8996-41bf-a7e7-06347723223b",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-20-herb-trimpe-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-20-herb-trimpe-artist",
       issueId: "marvel-the-transformers-20",
       creatorId: "herb-trimpe",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "681446cf-8580-42f4-ad73-e604b9424cc8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-21-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-21-bob-budiansky-writer",
       issueId: "marvel-the-transformers-21",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ffbc5d4f-7a24-4608-9811-fd2c0d377479",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-21-herb-trimpe-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-21-herb-trimpe-artist",
       issueId: "marvel-the-transformers-21",
       creatorId: "herb-trimpe",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "24e629e7-1056-4ff1-92c8-42f97ae92573",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-22-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-22-bob-budiansky-writer",
       issueId: "marvel-the-transformers-22",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "58eda14c-7c00-40dd-b085-d72f587f897f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-22-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-22-don-perlin-artist",
       issueId: "marvel-the-transformers-22",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "56a1dd6d-f91e-43cc-88c1-301d69412778",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-23-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-23-bob-budiansky-writer",
       issueId: "marvel-the-transformers-23",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e19d27a4-2f99-4fd0-bff0-98889477f1e6",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-23-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-23-don-perlin-artist",
       issueId: "marvel-the-transformers-23",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "ebd37999-3ebc-4129-925b-14690d4b9bcc",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-24-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-24-bob-budiansky-writer",
       issueId: "marvel-the-transformers-24",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "0e014e2f-07d6-459f-a2d0-bcf191db02a7",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-24-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-24-don-perlin-artist",
       issueId: "marvel-the-transformers-24",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b2a4f691-2dd1-4dd5-b5ae-1f598a6638be",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-25-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-25-bob-budiansky-writer",
       issueId: "marvel-the-transformers-25",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "61558ed5-2a0f-4040-a606-f47107015e0f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-25-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-25-don-perlin-artist",
       issueId: "marvel-the-transformers-25",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "506f2269-db6c-4ad4-a2ef-b4366b4a5fc0",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-26-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-26-bob-budiansky-writer",
       issueId: "marvel-the-transformers-26",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "f650eaf3-474c-4903-ad26-cd959296264c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-26-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-26-don-perlin-artist",
       issueId: "marvel-the-transformers-26",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "d08fcac1-fdf0-410e-b3fb-4e0c24c56c7f",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-27-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-27-bob-budiansky-writer",
       issueId: "marvel-the-transformers-27",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c3ee3052-b43e-4e92-af8c-03e648d14110",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-27-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-27-don-perlin-artist",
       issueId: "marvel-the-transformers-27",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "575e2c47-d61d-46e4-924d-a12742a14d62",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-28-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-28-bob-budiansky-writer",
       issueId: "marvel-the-transformers-28",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "39434acb-173a-42fc-a853-80016980ce60",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-28-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-28-don-perlin-artist",
       issueId: "marvel-the-transformers-28",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4fbb66e2-0dd4-47cb-85ba-df7d130c84b3",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-29-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-29-bob-budiansky-writer",
       issueId: "marvel-the-transformers-29",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4f4ce299-c856-48ec-835d-58303af6e148",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-29-don-perlin-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-29-don-perlin-artist",
       issueId: "marvel-the-transformers-29",
       creatorId: "don-perlin",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "4cc95ea3-55f5-432e-a221-303283515063",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-head-masters-1-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-head-masters-1-bob-budiansky-writer",
       issueId: "marvel-the-transformers-head-masters-1",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "898ccb21-9751-4be4-8e06-f32c0e21d691",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-the-transformers-head-masters-1-frank-springer-artist" },
+    update: {},
+    create: {
+      id: "marvel-the-transformers-head-masters-1-frank-springer-artist",
       issueId: "marvel-the-transformers-head-masters-1",
       creatorId: "frank-springer",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "25ed4219-bc0c-42b6-8eff-5bcc56b07abe",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-2-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-2-bob-budiansky-writer",
       issueId: "marvel-transformers-universe-2",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "40bdecd8-b14f-498c-bcfa-d911d109c806",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-2-frank-springer-artist" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-2-frank-springer-artist",
       issueId: "marvel-transformers-universe-2",
       creatorId: "frank-springer",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c522c7c7-be76-4ee1-b875-cc8da795658e",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-3-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-3-bob-budiansky-writer",
       issueId: "marvel-transformers-universe-3",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "c520495a-f2c9-438f-b36a-4bbde7b969f8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-3-frank-springer-artist" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-3-frank-springer-artist",
       issueId: "marvel-transformers-universe-3",
       creatorId: "frank-springer",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "b3f8a6f6-c014-450d-89dd-7b020a6020b8",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-4-bob-budiansky-writer" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-4-bob-budiansky-writer",
       issueId: "marvel-transformers-universe-4",
       creatorId: "bob-budiansky",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "e7477355-0b7f-4d96-a65a-003eae19bb3c",
+  await prisma.issueCredit.upsert({
+    where: { id: "marvel-transformers-universe-4-frank-springer-artist" },
+    update: {},
+    create: {
+      id: "marvel-transformers-universe-4-frank-springer-artist",
       issueId: "marvel-transformers-universe-4",
       creatorId: "frank-springer",
       role: 'ARTIST',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "9389f5d3-1c99-440a-8a04-7fc60828dbac",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-worlds-finest-comics-303-david-kraft-writer" },
+    update: {},
+    create: {
+      id: "dc-worlds-finest-comics-303-david-kraft-writer",
       issueId: "dc-worlds-finest-comics-303",
       creatorId: "david-kraft",
       role: 'WRITER',
     },
   });
-  await prisma.issueCredit.create({
-    data: {
-      id: "315f839d-77a6-4af9-a82a-055641933910",
+  await prisma.issueCredit.upsert({
+    where: { id: "dc-worlds-finest-comics-303-mike-chen-artist" },
+    update: {},
+    create: {
+      id: "dc-worlds-finest-comics-303-mike-chen-artist",
       issueId: "dc-worlds-finest-comics-303",
       creatorId: "mike-chen",
       role: 'ARTIST',
