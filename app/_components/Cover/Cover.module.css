@@ -1,0 +1,59 @@
+.cover {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border: 2px solid #000;
+  box-shadow: var(--comic-shadow-sm);
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--surface);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.cover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--comic-shadow);
+}
+
+.sm {
+  width: 110px;
+}
+
+.md {
+  width: 160px;
+}
+
+.lg {
+  width: 240px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  background: var(--pb, #1E2A44);
+}
+
+.halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--pa, #E8743C) 1px, transparent 1.4px);
+  background-size: 10px 10px;
+  opacity: 0.18;
+}
+
+.accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, var(--pa, #E8743C) 0%, transparent 100%);
+  opacity: 0.25;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover {
+    transition: none;
+  }
+}
