@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Status {
+  ONGOING
+  COMPLETED
+  CANCELLED
+  HIATUS
+}
+
+enum Role {
+  WRITER
+  ARTIST
+  INKER
+  COLORIST
+  LETTERER
+  COVER
+}
+
+model Publisher {
+  id      String   @id
+  name    String
+  founded Int?
+  hq      String?
+  bio     String?
+  color   String
+  series  Series[]
+}
+
+model Series {
+  id            String    @id
+  name          String
+  publisherId   String
+  publisher     Publisher @relation(fields: [publisherId], references: [id])
+  startYear     Int?
+  endYear       Int?
+  status        Status    @default(ONGOING)
+  genre         String?
+  description   String?
+  paletteBg     String?
+  paletteAccent String?
+  paletteInk    String?
+  issues        Issue[]
+}
+
+model Issue {
+  id         String        @id
+  seriesId   String
+  series     Series        @relation(fields: [seriesId], references: [id])
+  number     Int?
+  title      String?
+  coverDate  DateTime?
+  pages      Int?
+  price      Decimal?      @db.Decimal(5, 2)
+  synopsis   String?
+  coverImage String?
+  credits    IssueCredit[]
+
+  @@unique([seriesId, number])
+}
+
+model Creator {
+  id      String        @id
+  name    String
+  bio     String?
+  credits IssueCredit[]
+}
+
+model IssueCredit {
+  id        String  @id @default(cuid())
+  issueId   String
+  creatorId String
+  role      Role
+  issue     Issue   @relation(fields: [issueId], references: [id])
+  creator   Creator @relation(fields: [creatorId], references: [id])
+}
