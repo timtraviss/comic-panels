@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sep {
+  color: var(--text-muted);
+}
+
+.link {
+  color: var(--text-sub);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.current {
+  color: var(--text);
+}
