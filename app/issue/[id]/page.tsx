@@ -91,7 +91,7 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
               <div className={styles.credits}>
                 <h2 className={styles.creditsHead}>Credits</h2>
                 <div className={styles.creditsGrid}>
-                  {issue.credits.map(c => (
+                  {issue.credits.map((c: { id: string; role: string; creator: { name: string } }) => (
                     <div key={c.id} className={styles.credit}>
                       <div className={styles.avatar} style={{ background: `${series.paletteAccent ?? '#E8743C'}22`, border: `1px solid ${series.paletteAccent ?? '#E8743C'}44`, color: series.paletteAccent ?? '#E8743C' }}>
                         {c.creator.name.split(' ').map((w: string) => w[0]).join('').slice(0, 2)}
@@ -109,7 +109,7 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
             <div className={styles.stripSection}>
               <div className={styles.stripHead}>The run · {series.name}</div>
               <IssueStrip
-                issues={allIssues.map(i => ({ id: i.id, number: i.number, coverImage: i.coverImage, paletteBg: i.series.paletteBg, paletteAccent: i.series.paletteAccent }))}
+                issues={allIssues.map((i: { id: string; number: number | null; coverImage: string | null; series: { paletteBg: string | null; paletteAccent: string | null } }) => ({ id: i.id, number: i.number, coverImage: i.coverImage, paletteBg: i.series.paletteBg, paletteAccent: i.series.paletteAccent }))}
                 currentId={params.id}
               />
             </div>
