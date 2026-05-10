@@ -24,7 +24,7 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
     select: { id: true, number: true, coverImage: true, series: { select: { paletteBg: true, paletteAccent: true } } },
   })
 
-  const idx = allIssues.findIndex(i => i.id === params.id)
+  const idx = allIssues.findIndex((i: { id: string }) => i.id === params.id)
   const prev = idx > 0 ? allIssues[idx - 1] : null
   const next = idx < allIssues.length - 1 ? allIssues[idx + 1] : null
 
