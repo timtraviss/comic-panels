@@ -20,6 +20,9 @@ describe('titleToSlug', () => {
   it('collapses punctuation to single dash', () => {
     expect(titleToSlug('G.I.JOE')).toBe('gi-joe')
   })
+  it('strips apostrophes without leaving extra dashes', () => {
+    expect(titleToSlug("It's a Bird")).toBe('its-a-bird')
+  })
 })
 
 describe('makeSeriesId', () => {
@@ -35,7 +38,7 @@ describe('makeIssueId', () => {
   it('appends issue number', () => {
     expect(makeIssueId('marvel-gi-joe', 127)).toBe('marvel-gi-joe-127')
   })
-  it('handles null issue number with cuid fallback marker', () => {
+  it('handles null issue number with randomUUID fallback marker', () => {
     expect(makeIssueId('marvel-gi-joe', null)).toMatch(/^marvel-gi-joe-unknown-/)
   })
 })
