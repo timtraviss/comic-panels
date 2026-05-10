@@ -1,0 +1,32 @@
+.page { padding: 40px 0 80px; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+.layout { display: grid; grid-template-columns: 380px 1fr; gap: 56px; align-items: start; }
+.sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px; }
+.prevNext { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.navBtn { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; color: inherit; transition: background 0.15s; }
+.navBtn:hover { background: var(--bg-card-hover); }
+.disabled { opacity: 0.35; pointer-events: none; }
+.navArrow { font-size: 18px; }
+.navRef { font-family: var(--font-display); font-size: 11px; color: var(--brand); }
+.detail { display: flex; flex-direction: column; gap: 24px; }
+.pubPill { display: inline-block; padding: 3px 12px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; }
+.seriesLink { font-size: 14px; color: var(--text-sub); text-decoration: none; }
+.seriesLink:hover { color: var(--text); }
+.title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 64px); line-height: 1; margin: 0; }
+.issueNum { color: var(--brand); }
+.synopsis { font-size: 16px; line-height: 1.7; border-left: 3px solid var(--brand); padding-left: 20px; margin: 0; }
+.meta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.metaItem { display: flex; flex-direction: column; gap: 2px; }
+.metaLabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+.credits { display: flex; flex-direction: column; gap: 12px; }
+.creditsHead { font-family: var(--font-display); font-size: 16px; margin: 0; }
+.creditsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.credit { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 12px; flex-shrink: 0; }
+.creditRole { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); }
+.creditName { font-size: 14px; }
+.stripSection { border-top: 1px solid var(--border); padding-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+.stripHead { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); }
+@media (max-width: 1024px) { .layout { grid-template-columns: 280px 1fr; gap: 32px; } }
+@media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar { position: static; } }
+@media (prefers-reduced-motion: reduce) { .navBtn { transition: none; } }
