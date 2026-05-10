@@ -1,0 +1,5 @@
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 6px 14px; border-radius: var(--radius-pill); border: 1px solid var(--border); background: transparent; color: var(--text-sub); font-size: 13px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.chip:hover { border-color: var(--text-sub); color: var(--text); }
+.active { background: var(--brand); border-color: var(--brand); color: #000; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .chip { transition: none; } }

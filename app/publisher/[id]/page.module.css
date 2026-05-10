@@ -1,0 +1,17 @@
+.page { padding-bottom: 80px; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+.banner { padding: 56px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; background: radial-gradient(ellipse at 80% 50%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%); }
+.bannerInner { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+.eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); margin-bottom: 8px; }
+.name { font-family: var(--font-display); font-size: clamp(48px, 8vw, 96px); line-height: 1; margin-bottom: 12px; margin-top: 0; }
+.bio { font-size: 15px; color: var(--text-sub); max-width: 520px; line-height: 1.7; margin: 0; }
+.stats { display: flex; gap: 40px; flex-shrink: 0; }
+.stat { display: flex; flex-direction: column; gap: 4px; }
+.statNum { font-family: var(--font-display); font-size: 32px; }
+.statLabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+.catalogue { display: flex; flex-direction: column; gap: 0; }
+.sectionHead { font-family: var(--font-display); font-size: 20px; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .grid { grid-template-columns: repeat(2, 1fr); } }
