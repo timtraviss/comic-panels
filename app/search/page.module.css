@@ -1,0 +1,12 @@
+.page { padding: 64px 0 80px; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+.heading { font-family: var(--font-display); font-size: clamp(28px,4vw,48px); line-height: 1; margin-bottom: 8px; }
+.count { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
+.section { margin-bottom: 48px; }
+.sectionHead { font-family: var(--font-display); font-size: 18px; margin-bottom: 20px; }
+.pubChips { display: flex; flex-wrap: wrap; gap: 10px; }
+.seriesGrid { display: grid; grid-template-columns: repeat(5,1fr); gap: 20px; }
+.issueGrid { display: grid; grid-template-columns: repeat(7,1fr); gap: 16px; }
+.empty { font-size: 16px; color: var(--text-muted); padding: 40px 0; }
+@media (max-width: 1024px) { .seriesGrid { grid-template-columns: repeat(4,1fr); } .issueGrid { grid-template-columns: repeat(5,1fr); } }
+@media (max-width: 768px) { .seriesGrid { grid-template-columns: repeat(3,1fr); } .issueGrid { grid-template-columns: repeat(4,1fr); } }
