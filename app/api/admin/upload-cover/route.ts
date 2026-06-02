@@ -1,11 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 import { uploadCover } from '@/lib/supabase-storage'
 import { prisma } from '@/lib/db'
+import { isValidAdminSession } from '@/lib/admin-auth'
 
 const VALID_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_SIZE = 5 * 1024 * 1024 // 5MB
 
 export async function POST(request: NextRequest) {
+  const cookieStore = await cookies()
+  if (!isValidAdminSession(cookieStore.get('admin_session')?.value)) {
+    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+  }
+
   const formData = await request.formData()
   const issueId = formData.get('issueId') as string | null
   const file = formData.get('file') as File | null

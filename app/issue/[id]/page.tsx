@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
-import { createHmac, timingSafeEqual } from 'crypto'
+import { isValidAdminSession } from '@/lib/admin-auth'
 import { prisma } from '@/lib/db'
 import Cover from '@/app/_components/Cover/Cover'
 import Breadcrumb from '@/app/_components/Breadcrumb/Breadcrumb'
@@ -35,11 +35,7 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
   const publisher = series.publisher
 
   const cookieStore = await cookies()
-  const session = cookieStore.get('admin_session')?.value
-  const expectedToken = createHmac('sha256', process.env.ADMIN_PASSWORD ?? '').update('panels-admin').digest('hex')
-  const sessionBuf = Buffer.from(session ?? '')
-  const expectedBuf = Buffer.from(expectedToken)
-  const isAdmin = sessionBuf.length === expectedBuf.length && timingSafeEqual(sessionBuf, expectedBuf)
+  const isAdmin = isValidAdminSession(cookieStore.get('admin_session')?.value)
 
   return (
     <div className={styles.page}>

@@ -25,6 +25,7 @@ export default function CoverUpload({ issueId, hasCover }: Props) {
         return
       }
       setCurrentHasCover(true)
+      setLoading(false)
       window.location.reload()
     } catch {
       alert('Upload failed. Please try again.')
@@ -47,6 +48,7 @@ export default function CoverUpload({ issueId, hasCover }: Props) {
         return
       }
       setCurrentHasCover(false)
+      setLoading(false)
       window.location.reload()
     } catch {
       alert('Delete failed. Please try again.')

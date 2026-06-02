@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 import { deleteCover } from '@/lib/supabase-storage'
 import { prisma } from '@/lib/db'
+import { isValidAdminSession } from '@/lib/admin-auth'
 
 export async function DELETE(request: NextRequest) {
+  const cookieStore = await cookies()
+  if (!isValidAdminSession(cookieStore.get('admin_session')?.value)) {
+    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+  }
+
   let issueId: string | undefined
   try {
     const body = await request.json()
