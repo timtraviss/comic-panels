@@ -6,7 +6,7 @@ import styles from './CoverGrid.module.css'
 interface Issue {
   id: string
   title: string
-  number: number
+  number: number | null
   coverImage: string | null
   series: { name: string }
 }
@@ -77,79 +77,90 @@ export default function CoverGrid({ issues }: Props) {
         <button
           className={`${styles.filterBtn} ${filter === 'missing' ? styles.active : ''}`}
           onClick={() => setFilter('missing')}
+          aria-pressed={filter === 'missing'}
         >
           Missing cover ({missing})
         </button>
         <button
           className={`${styles.filterBtn} ${filter === 'all' ? styles.active : ''}`}
           onClick={() => setFilter('all')}
+          aria-pressed={filter === 'all'}
         >
           All issues ({issues.length})
         </button>
       </div>
 
-      <div className={styles.grid}>
-        {displayed.map(issue => {
-          const coverUrl = covers[issue.id]
-          const isLoading = loading[issue.id]
+      {displayed.length === 0 ? (
+        <p className={styles.emptyState}>
+          {filter === 'missing' ? 'All covers uploaded.' : 'No issues found.'}
+        </p>
+      ) : (
+        <div className={styles.grid}>
+          {displayed.map(issue => {
+            const coverUrl = covers[issue.id]
+            const isLoading = loading[issue.id]
 
-          return (
-            <div key={issue.id} className={styles.card}>
-              <div
-                className={`${styles.coverWrap} ${isLoading ? styles.loading : ''}`}
-                onClick={() => !isLoading && inputRefs.current[issue.id]?.click()}
-              >
-                {coverUrl ? (
-                  <Image
-                    src={coverUrl}
-                    alt={`${issue.series.name} #${issue.number}`}
-                    fill
-                    sizes="160px"
-                    style={{ objectFit: 'cover' }}
-                  />
-                ) : (
-                  <div className={styles.placeholder}>No cover</div>
-                )}
-                <div className={styles.overlay}>
-                  {isLoading ? (
-                    <div className={styles.spinner} />
+            return (
+              <div key={issue.id} className={styles.card}>
+                <button
+                  type="button"
+                  className={`${styles.coverWrap} ${isLoading ? styles.loading : ''}`}
+                  onClick={() => !isLoading && inputRefs.current[issue.id]?.click()}
+                  disabled={isLoading}
+                  aria-label={`${covers[issue.id] ? 'Replace' : 'Upload'} cover for ${issue.series.name} #${issue.number ?? '?'}`}
+                >
+                  {coverUrl ? (
+                    <Image
+                      src={coverUrl}
+                      alt={`${issue.series.name} #${issue.number ?? '?'}`}
+                      fill
+                      sizes="160px"
+                      style={{ objectFit: 'cover' }}
+                    />
                   ) : (
-                    <>
-                      <button
-                        className={styles.iconBtn}
-                        onClick={e => { e.stopPropagation(); inputRefs.current[issue.id]?.click() }}
-                      >
-                        {coverUrl ? 'Replace' : 'Upload'}
-                      </button>
-                      {coverUrl && (
-                        <button
-                          className={`${styles.iconBtn} ${styles.danger}`}
-                          onClick={e => { e.stopPropagation(); handleDelete(issue.id) }}
-                        >
-                          Delete
-                        </button>
-                      )}
-                    </>
+                    <div className={styles.placeholder}>No cover</div>
                   )}
-                </div>
+                  <div className={styles.overlay}>
+                    {isLoading ? (
+                      <div className={styles.spinner} />
+                    ) : (
+                      <>
+                        <button
+                          className={styles.iconBtn}
+                          onClick={e => { e.stopPropagation(); inputRefs.current[issue.id]?.click() }}
+                        >
+                          {coverUrl ? 'Replace' : 'Upload'}
+                        </button>
+                        {coverUrl && (
+                          <button
+                            className={`${styles.iconBtn} ${styles.danger}`}
+                            onClick={e => { e.stopPropagation(); handleDelete(issue.id) }}
+                          >
+                            Delete
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </button>
+                <input
+                  ref={el => { inputRefs.current[issue.id] = el }}
+                  className={styles.hiddenInput}
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={e => {
+                    const f = e.target.files?.[0]
+                    if (f) handleFileChange(issue.id, f)
+                    e.target.value = ''
+                  }}
+                />
+                <div className={styles.meta}>{issue.title || (issue.number != null ? `#${issue.number}` : '—')}</div>
+                <div className={`${styles.meta} ${styles.metaSeries}`}>{issue.series.name}</div>
               </div>
-              <input
-                ref={el => { inputRefs.current[issue.id] = el }}
-                className={styles.hiddenInput}
-                type="file"
-                accept="image/jpeg,image/png,image/webp"
-                onChange={e => {
-                  const f = e.target.files?.[0]
-                  if (f) handleFileChange(issue.id, f)
-                  e.target.value = ''
-                }}
-              />
-              <div className={styles.meta}>{issue.title || `#${issue.number}`}</div>
-              <div className={`${styles.meta} ${styles.metaSeries}`}>{issue.series.name}</div>
-            </div>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
+      )}
     </>
   )
 }
