@@ -22,6 +22,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'File must be under 5MB' }, { status: 400 })
   }
 
+  const existing = await prisma.issue.findUnique({ where: { id: issueId }, select: { id: true } })
+  if (!existing) {
+    return NextResponse.json({ error: 'Issue not found' }, { status: 404 })
+  }
+
   const buffer = Buffer.from(await file.arrayBuffer())
 
   try {
