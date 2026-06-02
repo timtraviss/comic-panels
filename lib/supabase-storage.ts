@@ -1,14 +1,23 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-function getClient() {
-  return createClient(
+if (process.env.NODE_ENV !== 'test' && (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY)) {
+  throw new Error('Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required')
+}
+
+const globalForSupabase = globalThis as unknown as { supabaseAdmin: SupabaseClient }
+
+function getAdminClient(): SupabaseClient {
+  if (globalForSupabase.supabaseAdmin) return globalForSupabase.supabaseAdmin
+  const client = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   )
+  if (process.env.NODE_ENV !== 'production') globalForSupabase.supabaseAdmin = client
+  return client
 }
 
 export async function uploadCover(issueId: string, buffer: Buffer, contentType: string): Promise<string> {
-  const supabase = getClient()
+  const supabase = getAdminClient()
   const filename = `${issueId}.jpg`
 
   const { error } = await supabase.storage
@@ -22,7 +31,7 @@ export async function uploadCover(issueId: string, buffer: Buffer, contentType: 
 }
 
 export async function deleteCover(issueId: string): Promise<void> {
-  const supabase = getClient()
+  const supabase = getAdminClient()
   const { error } = await supabase.storage
     .from('covers')
     .remove([`${issueId}.jpg`])
