@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { cookies } from 'next/headers'
+import { createHmac, timingSafeEqual } from 'crypto'
 import { prisma } from '@/lib/db'
 import Cover from '@/app/_components/Cover/Cover'
 import Breadcrumb from '@/app/_components/Breadcrumb/Breadcrumb'
 import IssueStrip from '@/app/_components/IssueStrip/IssueStrip'
+import CoverUpload from './CoverUpload'
 import styles from './page.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -31,6 +34,13 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
   const { series } = issue
   const publisher = series.publisher
 
+  const cookieStore = await cookies()
+  const session = cookieStore.get('admin_session')?.value
+  const expectedToken = createHmac('sha256', process.env.ADMIN_PASSWORD ?? '').update('panels-admin').digest('hex')
+  const sessionBuf = Buffer.from(session ?? '')
+  const expectedBuf = Buffer.from(expectedToken)
+  const isAdmin = sessionBuf.length === expectedBuf.length && timingSafeEqual(sessionBuf, expectedBuf)
+
   return (
     <div className={styles.page}>
       <div className={styles.container}>
@@ -52,6 +62,12 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
               size="lg"
               priority
             />
+            {isAdmin && (
+              <CoverUpload
+                issueId={issue.id}
+                hasCover={!!issue.coverImage}
+              />
+            )}
             <div className={styles.prevNext}>
               <Link href={prev ? `/issue/${prev.id}` : '#'} className={`${styles.navBtn} ${!prev ? styles.disabled : ''}`} aria-disabled={!prev}>
                 <span className={styles.navArrow}>←</span>
