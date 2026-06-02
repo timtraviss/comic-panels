@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { createHmac } from 'crypto'
+import { createHmac, timingSafeEqual } from 'crypto'
 
 function expectedToken(): string {
-  return createHmac('sha256', process.env.ADMIN_PASSWORD ?? '').update('panels-admin').digest('hex')
+  if (!process.env.ADMIN_PASSWORD) throw new Error('ADMIN_PASSWORD env var is not set')
+  return createHmac('sha256', process.env.ADMIN_PASSWORD).update('panels-admin').digest('hex')
 }
 
 export function middleware(request: NextRequest) {
@@ -14,7 +15,10 @@ export function middleware(request: NextRequest) {
   }
 
   const session = request.cookies.get('admin_session')?.value
-  if (session !== expectedToken()) {
+  const expected = expectedToken()
+  const sessionBuf = Buffer.from(session ?? '')
+  const expectedBuf = Buffer.from(expected)
+  if (sessionBuf.length !== expectedBuf.length || !timingSafeEqual(sessionBuf, expectedBuf)) {
     return NextResponse.redirect(new URL('/admin/login', request.url))
   }
 

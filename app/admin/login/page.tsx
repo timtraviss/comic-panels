@@ -14,16 +14,19 @@ export default function AdminLoginPage() {
     setLoading(true)
     setError('')
 
-    const res = await fetch('/api/admin/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password }),
-    })
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      })
 
-    if (res.ok) {
-      router.push('/admin/covers')
-    } else {
-      setError('Incorrect password.')
+      if (res.ok) {
+        router.push('/admin/covers')
+      } else {
+        setError('Incorrect password.')
+      }
+    } finally {
       setLoading(false)
     }
   }
