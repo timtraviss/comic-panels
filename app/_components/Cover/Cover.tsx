@@ -12,7 +12,7 @@ interface CoverProps {
 
 export default function Cover({ coverImage, alt, paletteBg, paletteAccent, size = 'md', priority = false }: CoverProps) {
   if (coverImage) {
-    const src = coverImage.startsWith('http') ? coverImage : `/covers/${coverImage}`
+    const src = coverImage.startsWith('https://') ? coverImage : `/covers/${coverImage}`
     return (
       <div className={`${styles.cover} ${styles[size]}`}>
         <Image

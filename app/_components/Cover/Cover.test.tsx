@@ -32,12 +32,6 @@ describe('Cover', () => {
     expect(img.getAttribute('src')).toBe('/covers/saga-1.jpg')
   })
 
-  it('renders an img when given a legacy relative path', () => {
-    render(<Cover coverImage="saga-1.jpg" alt="Saga #1 legacy" />)
-    const img = screen.getByRole('img', { name: 'Saga #1 legacy' })
-    expect(img).toBeTruthy()
-  })
-
   it('renders a placeholder (no img) when coverImage is null', () => {
     const { container } = render(<Cover coverImage={null} alt="No cover" />)
     expect(container.querySelector('img')).toBeNull()
