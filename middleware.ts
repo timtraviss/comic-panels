@@ -1,13 +1,32 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { createHmac, timingSafeEqual } from 'crypto'
 
-function expectedToken(): string {
-  if (!process.env.ADMIN_PASSWORD) throw new Error('ADMIN_PASSWORD env var is not set')
-  return createHmac('sha256', process.env.ADMIN_PASSWORD).update('panels-admin').digest('hex')
+async function isValidSession(session: string | undefined): Promise<boolean> {
+  const password = process.env.ADMIN_PASSWORD
+  if (!password || !session) return false
+
+  const enc = new TextEncoder()
+  const key = await crypto.subtle.importKey(
+    'raw',
+    enc.encode(password),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  )
+  const sig = await crypto.subtle.sign('HMAC', key, enc.encode('panels-admin'))
+  const expected = Array.from(new Uint8Array(sig))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+
+  if (session.length !== expected.length) return false
+  let diff = 0
+  for (let i = 0; i < session.length; i++) {
+    diff |= session.charCodeAt(i) ^ expected.charCodeAt(i)
+  }
+  return diff === 0
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (pathname === '/admin/login' || pathname === '/api/admin/login') {
@@ -15,10 +34,7 @@ export function middleware(request: NextRequest) {
   }
 
   const session = request.cookies.get('admin_session')?.value
-  const expected = expectedToken()
-  const sessionBuf = Buffer.from(session ?? '')
-  const expectedBuf = Buffer.from(expected)
-  if (sessionBuf.length !== expectedBuf.length || !timingSafeEqual(sessionBuf, expectedBuf)) {
+  if (!(await isValidSession(session))) {
     return NextResponse.redirect(new URL('/admin/login', request.url))
   }
 
