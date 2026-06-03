@@ -5,7 +5,7 @@ import styles from './CoverGrid.module.css'
 
 interface Issue {
   id: string
-  title: string
+  title: string | null
   number: number | null
   coverImage: string | null
   series: { name: string }
