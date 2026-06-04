@@ -34,3 +34,11 @@ export function parseCoverPrice(price: string | null | undefined): number | null
   const val = parseFloat(cleaned)
   return isNaN(val) ? null : val
 }
+
+export function makePublisherId(name: string): string {
+  return titleToSlug(name)
+}
+
+export function makeCreatorId(name: string): string {
+  return titleToSlug(name)
+}

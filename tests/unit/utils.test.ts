@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { normalise, titleToSlug, parseCoverPrice, makeSeriesId, makeIssueId } from '@/lib/utils'
+import { normalise, titleToSlug, parseCoverPrice, makeSeriesId, makeIssueId, makePublisherId, makeCreatorId } from '@/lib/utils'
 
 describe('normalise', () => {
   it('strips punctuation and lowercases', () => {
@@ -52,5 +52,23 @@ describe('parseCoverPrice', () => {
   })
   it('returns null for non-numeric', () => {
     expect(parseCoverPrice('N/A')).toBeNull()
+  })
+})
+
+describe('makePublisherId', () => {
+  it('slugifies publisher name', () => {
+    expect(makePublisherId('Marvel Comics')).toBe('marvel-comics')
+  })
+  it('handles special characters', () => {
+    expect(makePublisherId('Dark Horse')).toBe('dark-horse')
+  })
+})
+
+describe('makeCreatorId', () => {
+  it('slugifies creator name', () => {
+    expect(makeCreatorId('Stan Lee')).toBe('stan-lee')
+  })
+  it('handles apostrophes', () => {
+    expect(makeCreatorId("Neil Gaiman")).toBe('neil-gaiman')
   })
 })
