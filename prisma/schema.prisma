@@ -36,7 +36,7 @@ model Series {
   id            String    @id
   name          String
   publisherId   String
-  publisher     Publisher @relation(fields: [publisherId], references: [id])
+  publisher     Publisher @relation(fields: [publisherId], references: [id], onDelete: Cascade)
   startYear     Int?
   endYear       Int?
   status        Status    @default(ONGOING)
@@ -51,7 +51,7 @@ model Series {
 model Issue {
   id         String        @id
   seriesId   String
-  series     Series        @relation(fields: [seriesId], references: [id])
+  series     Series        @relation(fields: [seriesId], references: [id], onDelete: Cascade)
   number     Int?
   title      String?
   coverDate  DateTime?
@@ -76,6 +76,6 @@ model IssueCredit {
   issueId   String
   creatorId String
   role      Role
-  issue     Issue   @relation(fields: [issueId], references: [id])
-  creator   Creator @relation(fields: [creatorId], references: [id])
+  issue     Issue   @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  creator   Creator @relation(fields: [creatorId], references: [id], onDelete: Cascade)
 }
