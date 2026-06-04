@@ -1,8 +1,13 @@
 import Link from 'next/link'
+import { cookies } from 'next/headers'
+import { isValidAdminSession } from '@/lib/admin-auth'
 import SearchInput from '@/app/_components/SearchInput/SearchInput'
 import styles from './Nav.module.css'
 
-export default function Nav() {
+export default async function Nav() {
+  const cookieStore = await cookies()
+  const isAdmin = isValidAdminSession(cookieStore.get('admin_session')?.value)
+
   return (
     <header className={styles.nav}>
       <div className={styles.inner}>
@@ -16,6 +21,9 @@ export default function Nav() {
           <Link href="/issues" className={styles.link}>Issues</Link>
         </nav>
         <SearchInput />
+        {isAdmin && (
+          <Link href="/admin/covers" className={styles.adminLink}>Admin</Link>
+        )}
       </div>
     </header>
   )
