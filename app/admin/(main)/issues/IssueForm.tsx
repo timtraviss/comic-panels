@@ -140,6 +140,7 @@ export default function IssueForm({ seriesList, creators, publishers, issue }: P
             <select className="adminInput" value={publisherId} onChange={e => handlePublisherChange(e.target.value)}>
               {publishers.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
             </select>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Filters the series list — select a series below to reassign.</span>
           </FormField>
 
           <FormField label="Series" required>
