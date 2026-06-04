@@ -6,9 +6,10 @@ import styles from '../page.module.css'
 export const dynamic = 'force-dynamic'
 
 export default async function NewIssuePage() {
-  const [seriesList, creators] = await Promise.all([
-    prisma.series.findMany({ orderBy: { name: 'asc' }, select: { id: true, name: true } }),
+  const [seriesList, creators, publishers] = await Promise.all([
+    prisma.series.findMany({ orderBy: { name: 'asc' }, select: { id: true, name: true, publisherId: true } }),
     prisma.creator.findMany({ orderBy: { name: 'asc' }, select: { id: true, name: true } }),
+    prisma.publisher.findMany({ orderBy: { name: 'asc' }, select: { id: true, name: true } }),
   ])
 
   return (
@@ -17,7 +18,7 @@ export default async function NewIssuePage() {
         <h1 className={styles.heading}>Add issue</h1>
         <Link href="/admin/issues" className={styles.editLink}>← Back</Link>
       </div>
-      <IssueForm seriesList={seriesList} creators={creators} />
+      <IssueForm seriesList={seriesList} creators={creators} publishers={publishers} />
     </div>
   )
 }
