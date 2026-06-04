@@ -10,7 +10,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
   }
 
   const body = await request.json()
-  const { seriesId, number, title, coverDate, pages, price, synopsis, credits } = body
+  const { seriesId, number, title, coverDate, pages, price, synopsis, upc, credits } = body
 
   if (!seriesId || number === undefined || number === null) {
     return NextResponse.json({ error: 'seriesId and number are required' }, { status: 400 })
@@ -28,6 +28,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
         pages: pages ? Number(pages) : null,
         price: price ? String(price) : null,
         synopsis: synopsis || null,
+        upc: upc || null,
         credits: credits?.length
           ? { create: (credits as { creatorId: string; role: string }[]).map(c => ({ creatorId: c.creatorId, role: c.role as any })) }
           : undefined,

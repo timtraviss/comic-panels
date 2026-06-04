@@ -59,6 +59,7 @@ model Issue {
   price      Decimal?      @db.Decimal(5, 2)
   synopsis   String?
   coverImage String?
+  upc        String?
   credits    IssueCredit[]
 
   @@unique([seriesId, number])

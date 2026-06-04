@@ -18,6 +18,7 @@ interface Issue {
   pages: number | null
   price: string | null
   synopsis: string | null
+  upc: string | null
   credits: CreditRow[]
 }
 
@@ -38,6 +39,7 @@ export default function IssueForm({ seriesList, creators, issue }: Props) {
   const [pages, setPages] = useState(issue?.pages?.toString() ?? '')
   const [price, setPrice] = useState(issue?.price ?? '')
   const [synopsis, setSynopsis] = useState(issue?.synopsis ?? '')
+  const [upc, setUpc] = useState(issue?.upc ?? '')
   const [credits, setCredits] = useState<CreditRow[]>(issue?.credits ?? [])
   const [error, setError] = useState('')
   const [saving, setSaving] = useState(false)
@@ -60,6 +62,7 @@ export default function IssueForm({ seriesList, creators, issue }: Props) {
           pages: pages || null,
           price: price || null,
           synopsis: synopsis || null,
+          upc: upc || null,
           credits,
         }),
       })
@@ -104,6 +107,10 @@ export default function IssueForm({ seriesList, creators, issue }: Props) {
 
         <FormField label="Price ($)">
           <input className="adminInput" type="number" step="0.01" value={price} onChange={e => setPrice(e.target.value)} placeholder="3.99" />
+        </FormField>
+
+        <FormField label="UPC">
+          <input className="adminInput" value={upc} onChange={e => setUpc(e.target.value)} placeholder="0-12345-67890-1" />
         </FormField>
       </div>
 

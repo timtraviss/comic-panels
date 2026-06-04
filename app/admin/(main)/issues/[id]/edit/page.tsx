@@ -35,6 +35,7 @@ export default async function EditIssuePage({ params }: { params: { id: string }
           pages: issue.pages,
           price: issue.price ? String(issue.price) : null,
           synopsis: issue.synopsis,
+          upc: issue.upc,
           credits: issue.credits.map(c => ({ creatorId: c.creatorId, role: c.role })),
         }}
       />

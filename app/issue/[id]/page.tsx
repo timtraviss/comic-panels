@@ -97,6 +97,7 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
               {issue.coverDate && <div className={styles.metaItem}><span className={styles.metaLabel}>Cover date</span><span>{new Date(issue.coverDate).toLocaleDateString('en-NZ', { month: 'long', year: 'numeric' })}</span></div>}
               {issue.pages && <div className={styles.metaItem}><span className={styles.metaLabel}>Pages</span><span>{issue.pages}</span></div>}
               {issue.price && <div className={styles.metaItem}><span className={styles.metaLabel}>Cover price</span><span>${Number(issue.price).toFixed(2)}</span></div>}
+              {issue.upc && <div className={styles.metaItem}><span className={styles.metaLabel}>UPC</span><span>{issue.upc}</span></div>}
             </div>
 
             {issue.credits.length > 0 && (
