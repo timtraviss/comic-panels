@@ -43,3 +43,31 @@
   --font-serif:   var(--font-crimson), 'Crimson Pro', Georgia, serif;
   --font-body:    var(--font-inter), Inter, system-ui, sans-serif;
 }
+
+/* Admin form inputs */
+.adminInput,
+input.adminInput,
+select.adminInput,
+textarea.adminInput {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9375rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  font-family: var(--font-body);
+  transition: border-color 0.15s;
+}
+
+input.adminInput:focus,
+select.adminInput:focus,
+textarea.adminInput:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+textarea.adminInput {
+  resize: vertical;
+  min-height: 80px;
+}
