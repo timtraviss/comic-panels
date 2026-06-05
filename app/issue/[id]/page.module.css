@@ -8,7 +8,7 @@
 .disabled { opacity: 0.35; pointer-events: none; }
 .navArrow { font-size: 18px; }
 .navRef { font-family: var(--font-display); font-size: 11px; color: var(--brand); }
-.detail { display: flex; flex-direction: column; gap: 24px; }
+.detail { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
 .pubPill { display: inline-block; padding: 3px 12px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; width: fit-content; }
 .seriesLink { font-size: 14px; color: var(--text-sub); text-decoration: none; }
 .seriesLink:hover { color: var(--text); }
