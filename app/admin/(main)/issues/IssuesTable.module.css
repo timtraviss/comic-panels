@@ -127,3 +127,44 @@
   color: var(--text-muted);
   margin-top: 2rem;
 }
+
+.filterBar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.filterControl {
+  width: auto !important;
+  min-width: 140px;
+}
+
+.filterNum {
+  min-width: 88px;
+  max-width: 100px;
+}
+
+.clearBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  padding: 0.4rem 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+
+.clearBtn:hover {
+  border-color: var(--text-sub);
+  color: var(--text);
+}
+
+.resultCount {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: -0.75rem 0 1rem;
+}
