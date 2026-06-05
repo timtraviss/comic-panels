@@ -38,7 +38,10 @@ export default function IssuesTable({ issues }: { issues: Issue[] }) {
     [issues, filters.publisher]
   )
 
-  const filteredIssues = useMemo(() => filterIssues(issues, filters), [issues, filters])
+  const filteredIssues = useMemo(
+    () => filterIssues(issues, filters),
+    [issues, filters.publisher, filters.series, filters.issueNum, filters.title]
+  )
 
   const isFiltered = !!(filters.publisher || filters.series || filters.issueNum || filters.title)
 
@@ -91,7 +94,7 @@ export default function IssuesTable({ issues }: { issues: Issue[] }) {
     <div>
       <div className={styles.filterBar}>
         <select
-          className={`adminInput ${styles.filterControl}`}
+          className={styles.filterControl}
           value={filters.publisher}
           onChange={e => setFilters(f => ({ ...f, publisher: e.target.value, series: '' }))}
           aria-label="Filter by publisher"
@@ -100,7 +103,7 @@ export default function IssuesTable({ issues }: { issues: Issue[] }) {
           {publisherOptions.map(p => <option key={p} value={p}>{p}</option>)}
         </select>
         <select
-          className={`adminInput ${styles.filterControl}`}
+          className={styles.filterControl}
           value={filters.series}
           onChange={e => setFilters(f => ({ ...f, series: e.target.value }))}
           aria-label="Filter by series"
@@ -110,7 +113,7 @@ export default function IssuesTable({ issues }: { issues: Issue[] }) {
         </select>
         <input
           type="number"
-          className={`adminInput ${styles.filterControl} ${styles.filterNum}`}
+          className={`${styles.filterControl} ${styles.filterNum}`}
           placeholder="Issue #"
           value={filters.issueNum}
           onChange={e => setFilters(f => ({ ...f, issueNum: e.target.value }))}
@@ -119,7 +122,7 @@ export default function IssuesTable({ issues }: { issues: Issue[] }) {
         />
         <input
           type="text"
-          className={`adminInput ${styles.filterControl}`}
+          className={styles.filterControl}
           placeholder="Search title…"
           value={filters.title}
           onChange={e => setFilters(f => ({ ...f, title: e.target.value }))}
