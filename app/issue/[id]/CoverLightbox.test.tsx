@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest'
 import CoverLightbox from './CoverLightbox'
 
 vi.mock('next/image', () => ({
-  default: ({ alt }: { alt: string; [key: string]: unknown }) => <img alt={alt} />,
+  default: ({ alt, src }: { alt: string; src?: string; [key: string]: unknown }) => <img alt={alt} src={src} />,
 }))
 
 vi.mock('@/app/_components/Cover/Cover', () => ({

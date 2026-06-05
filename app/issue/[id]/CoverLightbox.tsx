@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Cover from '@/app/_components/Cover/Cover'
@@ -15,10 +15,19 @@ interface CoverLightboxProps {
 export default function CoverLightbox({ coverImage, alt, paletteBg, paletteAccent }: CoverLightboxProps) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => { setMounted(true) }, [])
 
-  const close = useCallback(() => setOpen(false), [])
+  const close = useCallback(() => {
+    setOpen(false)
+    triggerRef.current?.focus()
+  }, [])
+
+  useEffect(() => {
+    if (open) overlayRef.current?.focus()
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -47,6 +56,7 @@ export default function CoverLightbox({ coverImage, alt, paletteBg, paletteAccen
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         className={styles.trigger}
         onClick={() => setOpen(true)}
@@ -64,6 +74,8 @@ export default function CoverLightbox({ coverImage, alt, paletteBg, paletteAccen
 
       {mounted && open && createPortal(
         <div
+          ref={overlayRef}
+          tabIndex={-1}
           className={styles.overlay}
           onClick={close}
           role="dialog"
@@ -75,9 +87,9 @@ export default function CoverLightbox({ coverImage, alt, paletteBg, paletteAccen
               src={src}
               alt={alt}
               fill
-              sizes="90vw"
+              sizes="(max-aspect-ratio: 2/3) calc(90vh * 2 / 3), 90vw"
               style={{ objectFit: 'contain' }}
-              priority
+              priority={false}
             />
           </div>
         </div>,
