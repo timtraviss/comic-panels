@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { isValidAdminSession } from '@/lib/admin-auth'
 import { prisma } from '@/lib/db'
-import Cover from '@/app/_components/Cover/Cover'
 import Breadcrumb from '@/app/_components/Breadcrumb/Breadcrumb'
 import IssueStrip from '@/app/_components/IssueStrip/IssueStrip'
 import CoverUpload from './CoverUpload'
+import CoverLightbox from './CoverLightbox'
 import styles from './page.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -50,13 +50,11 @@ export default async function IssuePage({ params }: { params: { id: string } }) 
 
         <div className={styles.layout}>
           <aside className={styles.sidebar}>
-            <Cover
+            <CoverLightbox
               coverImage={issue.coverImage}
               alt={`${series.name} #${issue.number}`}
               paletteBg={series.paletteBg}
               paletteAccent={series.paletteAccent}
-              size="lg"
-              priority
             />
             {isAdmin && (
               <CoverUpload
